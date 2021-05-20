@@ -1,14 +1,35 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://sprites/banana/banana7.png" type="Texture" id=1]
+[ext_resource path="res://sprites/banana/banana1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/banana/banana2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/banana/banana0.png" type="Texture" id=4]
+[ext_resource path="res://sprites/banana/banana6.png" type="Texture" id=5]
+[ext_resource path="res://sprites/banana/banana3.png" type="Texture" id=6]
+[ext_resource path="res://sprites/banana/banana4.png" type="Texture" id=7]
+[ext_resource path="res://sprites/banana/banana5.png" type="Texture" id=8]
+[ext_resource path="res://sprites/banana/banana10.png" type="Texture" id=9]
+[ext_resource path="res://sprites/banana/banana14.png" type="Texture" id=10]
+[ext_resource path="res://sprites/banana/banana9.png" type="Texture" id=11]
+[ext_resource path="res://sprites/banana/banana8.png" type="Texture" id=12]
+[ext_resource path="res://sprites/banana/banana12.png" type="Texture" id=13]
+[ext_resource path="res://sprites/banana/banana15.png" type="Texture" id=14]
+[ext_resource path="res://sprites/banana/banana13.png" type="Texture" id=15]
+[ext_resource path="res://sprites/banana/banana11.png" type="Texture" id=16]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [  ],
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 10 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "default",
-"speed": 5.0
+"name": "banana",
+"speed": 15.0
 } ]
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
+position = Vector2( 228, 139 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="banana" type="AnimatedSprite" parent="Area2D"]
 frames = SubResource( 1 )
+animation = "banana"

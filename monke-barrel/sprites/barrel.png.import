@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bananas.png-23404f76812ab11eb9f1924e46bb1806.stex"
+path="res://.import/barrel.png-86ea82274b58d2c19fcd70e8695ab738.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bananas.png"
-dest_files=[ "res://.import/bananas.png-23404f76812ab11eb9f1924e46bb1806.stex" ]
+source_file="res://sprites/barrel.png"
+dest_files=[ "res://.import/barrel.png-86ea82274b58d2c19fcd70e8695ab738.stex" ]
 
 [params]
 
