@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://sprites/DKbarrelroll.png" type="Texture" id=1]
 [ext_resource path="res://scripts/monke.gd" type="Script" id=2]
 
+[sub_resource type="CircleShape2D" id=1]
+radius = 49.4555
+
 [node name="Monke" type="KinematicBody2D"]
 position = Vector2( 515, 440 )
+collision_mask = 14
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 600.0, -6.0, -297.0 ],
@@ -26,3 +30,6 @@ limit_bottom = 600
 limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

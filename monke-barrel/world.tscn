@@ -6,7 +6,8 @@
 [ext_resource path="res://barrel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://banana.tscn" type="PackedScene" id=5]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 64.4264, 1096.71 )
 
 [node name="World" type="Node2D"]
 __meta__ = {
@@ -14,7 +15,7 @@ __meta__ = {
 }
 
 [node name="Monke" parent="." instance=ExtResource( 3 )]
-position = Vector2( 482.558, 433.803 )
+position = Vector2( 482.558, 346.571 )
 
 [node name="DKbarrelroll" parent="Monke" index="0"]
 position = Vector2( -1.68555, 0.542236 )
@@ -27,14 +28,73 @@ position = Vector2( 483.779, 477.972 )
 position = Vector2( -0.553589, -1.02399 )
 scale = Vector2( 0.622024, 0.607231 )
 
-[node name="banana" parent="." instance=ExtResource( 5 )]
-position = Vector2( 253.478, -216.879 )
+[node name="Bananas" type="Node2D" parent="."]
 
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2( 10.5, 0 )
-tile_set = SubResource( 1 )
-cell_size = Vector2( 80, 80 )
-format = 1
+[node name="banana" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 482.558, -216.879 )
+
+[node name="banana2" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 484.67, -50.0018 )
+
+[node name="banana3" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 484.67, 108.39 )
+
+[node name="banana4" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 642.181, 108.39 )
+
+[node name="banana5" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 642.181, -50.0018 )
+
+[node name="banana6" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 642.181, -216.879 )
+
+[node name="banana7" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 319.15, -216.879 )
+
+[node name="banana8" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 319.15, -50.0018 )
+
+[node name="banana9" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 319.15, 108.39 )
+
+[node name="banana10" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 319.15, -385.501 )
+
+[node name="banana11" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 482.558, -385.501 )
+
+[node name="banana12" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 642.181, -385.501 )
+
+[node name="banana13" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 642.181, -572.177 )
+
+[node name="banana14" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 484.67, -572.177 )
+
+[node name="banana15" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 319.15, -572.177 )
+
+[node name="banana16" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 319.15, -743.526 )
+
+[node name="banana17" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 482.558, -743.526 )
+
+[node name="banana18" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 642.181, -743.526 )
+
+[node name="banana19" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 642.181, -933.799 )
+
+[node name="banana20" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 484.67, -933.799 )
+
+[node name="banana21" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 319.15, -933.799 )
+
+[node name="banana22" parent="Bananas" instance=ExtResource( 5 )]
+position = Vector2( 484.67, -1126.45 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -50,8 +110,10 @@ scale = Vector2( 4.00727, 4.45049 )
 texture = ExtResource( 1 )
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -5
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer2"]
+layer = -105
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground"]
 position = Vector2( 0, 1.52588e-05 )
@@ -60,6 +122,20 @@ position = Vector2( 0, 1.52588e-05 )
 position = Vector2( 17.9269, -370.98 )
 scale = Vector2( 1.4195, 1.18458 )
 texture = ExtResource( 2 )
+
+[node name="right-wall" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="right-wall" type="CollisionShape2D" parent="right-wall"]
+position = Vector2( 951.858, -170.642 )
+shape = SubResource( 1 )
+
+[node name="left-wall" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="left-wall" type="CollisionShape2D" parent="left-wall"]
+position = Vector2( 69.9137, -170.642 )
+shape = SubResource( 1 )
 
 [editable path="Monke"]
 [editable path="Barrel"]
