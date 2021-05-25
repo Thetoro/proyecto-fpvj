@@ -1,20 +1,21 @@
 extends Rotate
 
-var speed: = Vector2(400.0, 200.0)
+var speed: = Vector2(25.2, 25.0)
 var velocity: = Vector2.ZERO
 var gravity: = 9.8
 
-func _ready() -> void:
-	set_physics_process(true)
+func _ready() -> void: 
+	if Input.is_action_pressed("shoot"):
+		set_physics_process(true)
 
 func _physics_process(delta: float) -> void:
-	var dir = movimiento()
+	var rot = fmod(rotation_degrees, 360)
+	var dir = movimiento(rot)
 	velocity = calculate_move_velocity(velocity, dir, speed)
 	velocity = move_and_slide(velocity)
 
-func movimiento() -> Vector2:
-	return Vector2(Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
-	Input.get_action_strength("move_down") - Input.get_action_strength("move_up"))
+func movimiento(barril: float) -> Vector2:
+	return Vector2(cos(barril), sin(barril))
 
 func calculate_move_velocity(
 		linear_velocity: Vector2, 
@@ -22,8 +23,6 @@ func calculate_move_velocity(
 		speed: Vector2
 	) -> Vector2:
 	var out: = linear_velocity
-	out.x = speed.x * direction.x
-	out.y += gravity * get_physics_process_delta_time()
-	if direction.y == -1.0:
-		out.y = speed.y * direction.y
+	out.x += speed.x * direction.x
+	out.y += gravity * get_physics_process_delta_time() + speed.y * direction.y
 	return out
