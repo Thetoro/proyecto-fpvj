@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Fuentes/Fonts/Kenney Pixel Square.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://sprites/button.png" type="Texture" id=2]
+[ext_resource path="res://Fuentes/Fonts/Fipps-Regular.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://MenuBackground.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/Menu inicial.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 3 )
+
+[node name="Menu inicial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -12.5
+margin_right = 138.0
+margin_bottom = 37.5
+custom_constants/separation = 60
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JUGAR" type="TextureButton" parent="VBoxContainer"]
+margin_right = 250.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 30, 50 )
+texture_normal = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/JUGAR"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -43.2161
+margin_top = -26.4704
+margin_right = 63.7839
+margin_bottom = 19.5296
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.960784, 0.988235, 0.984314, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "JUGAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SALIR" type="TextureButton" parent="VBoxContainer"]
+margin_top = 110.0
+margin_right = 250.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 30, 50 )
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="VBoxContainer/SALIR"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -43.2161
+margin_top = -26.4704
+margin_right = 63.7839
+margin_bottom = 19.5296
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.960784, 0.988235, 0.984314, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "SALIR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.32
+anchor_top = 0.123
+anchor_right = 0.761
+anchor_bottom = 0.291
+margin_left = 0.409027
+margin_top = -0.254898
+margin_right = -0.174988
+margin_bottom = -0.0549011
+custom_fonts/normal_font = SubResource( 2 )
+text = "MonkeBarrel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/JUGAR" to="." method="_on_JUGAR_pressed"]
+[connection signal="pressed" from="VBoxContainer/SALIR" to="." method="_on_SALIR_pressed"]
