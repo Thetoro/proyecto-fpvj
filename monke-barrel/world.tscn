@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://sprites/world.png" type="Texture" id=1]
 [ext_resource path="res://sprites/background.jpg" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://barrel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://banana.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/world.gd" type="Script" id=6]
+[ext_resource path="res://Sound/donkey-kong-country-bonus-room-blitz-restored.ogg" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64.4264, 1096.71 )
@@ -145,6 +146,11 @@ collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -8.0
+autoplay = true
 
 [connection signal="banana_colected" from="Bananas/banana" to="Bananas" method="_on_banana_banana_colected"]
 [connection signal="banana_colected" from="Bananas/banana16" to="Bananas" method="_on_banana_banana_colected"]
