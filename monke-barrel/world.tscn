@@ -32,6 +32,7 @@ scale = Vector2( 0.622024, 0.607231 )
 
 [node name="CollisionShape2D" parent="Barrel" index="1"]
 position = Vector2( -1.22098, -1.90735e-06 )
+disabled = true
 
 [node name="Bananas" type="Node2D" parent="."]
 script = ExtResource( 3 )

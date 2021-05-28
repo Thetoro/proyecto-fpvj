@@ -1,5 +1,6 @@
 extends Area2D
 
+#Se obtiene el nodo donde se realiza la animación
 onready var _animated_sprite: AnimatedSprite = get_node("AnimatedSprite")
 signal banana_colected
 
